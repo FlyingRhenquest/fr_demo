@@ -1,0 +1,26 @@
+This is a quick and dirty demo of these utilities. Start it up
+ with a NGA ephemeris file from http://earth-info.nga.mil/GandG/sathtml/PEexe.html
+(Since you're on linux you have to un-lharc it with lha e filename.exe.)
+
+It will kick off a server on port 12345 that returns KML for all
+the satellites at time *NOW* - 2 days. This can be used with a network
+link in a google earth KML file to plot the locations of the
+satellites. NGA's ephemeris files aren't updated for now,
+so I have to subtract two days from the current time.
+
+TODO: I seem to recall hearing that google earth has a time slider.
+It'd be neat to integrate that in to the server, though the error
+handling would have to be a bit better.
+
+Note that I'm not interpolating the locations of the satellites,
+what you're seeing is a last-seen up to 15 minutes old.
+If you want to interpolate the location of the satellite
+you can use some quaternion arc interpolation (with
+boost::quaternion maybe...) to get the coordinates as of
+exactly now. I'll probably try to add this in next time
+I feel like working on this. This is mostly just a proof-of
+concept, plus a nice demonstration of CppUnit.
+
+As an aside, I'm pretty pleased with CppUnit. I feel like I'm
+kind of abusing in here, and it just performs, nicely,
+seemingly against all odds.
