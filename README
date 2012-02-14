@@ -24,3 +24,12 @@ concept, plus a nice demonstration of CppUnit.
 As an aside, I'm pretty pleased with CppUnit. I feel like I'm
 kind of abusing in here, and it just performs, nicely,
 seemingly against all odds.
+
+So to be clear:
+
+1) make
+2) Grab latest NGA ephemeris file from the URL above.
+3) lha -e that file
+4) run ./demo with the extracted ephemeris file
+5) Fire up google earth
+6) Point google earth at demo.kml.
